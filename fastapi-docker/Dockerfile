@@ -5,4 +5,4 @@ WORKDIR /code
 COPY ./pyproject.toml /code/
 COPY ./fastapi_docker /code/fastapi_docker/
 RUN poetry install
-CMD ["poetry", "run", "uvicorn", "fastapi_docker.main: app", "--host", "0.0.0.0"]
+CMD ["poetry", "run", "uvicorn", "fastapi_docker.main:app", "--host", "0.0.0.0"]

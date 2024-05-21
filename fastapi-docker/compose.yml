@@ -1,0 +1,11 @@
+name: "fastapi"
+services:
+  fastapi:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: fastapicontainer
+    expose:
+      - 8000:8000
+    ports:
+      - "8000:8000"
