@@ -1,0 +1,25 @@
+# Use an official Python runtime as a parent image
+FROM python:3.12
+
+LABEL maintainer="Resheph Inayat"
+# Set the working directory in the container
+WORKDIR /code
+
+# Install Poetry
+RUN pip install poetry
+
+# Copy the current directory contents into the container at /code
+COPY ./pyproject.toml /code/
+COPY ./app /code/app/
+
+# Configuration to avoid creating virtual environments inside the Docker container
+RUN poetry config virtualenvs.create false
+
+# Install dependencies including development ones
+RUN poetry install
+
+# Make port 8000 available to the world outside this container
+EXPOSE 8000
+
+# Run the app. CMD can be overridden when starting the container
+CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--reload"]
