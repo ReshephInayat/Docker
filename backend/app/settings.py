@@ -1,5 +1,8 @@
 from starlette.config import Config
 from starlette.datastructures import Secret
+from dotenv import load_dotenv
+
+load_dotenv()
 
 try:
     config = Config(".env")

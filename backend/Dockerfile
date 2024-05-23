@@ -9,8 +9,7 @@ WORKDIR /code
 RUN pip install poetry
 
 # Copy the current directory contents into the container at /code
-COPY ./pyproject.toml /code/
-COPY ./app /code/app/
+COPY ./ /code/
 
 # Configuration to avoid creating virtual environments inside the Docker container
 RUN poetry config virtualenvs.create false
