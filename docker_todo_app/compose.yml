@@ -16,7 +16,7 @@ services:
     restart: always
     container_name: PostgresCont
     environment:
-        - POSTGRES_USER=resheph
+        - POSTGRES_USER=rasaf
         - POSTGRES_PASSWORD=my_password
         - POSTGRES_DB=mydatabase
     ports:
